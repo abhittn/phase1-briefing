@@ -5,35 +5,18 @@
 We will split the "Watchlist Feature" into 6 discrete AI tasks, ordered as we would actually build them:
 
 1. **Redux Slice Setup**
-
-   - Create a `watchlistSlice.js` using Redux Toolkit.
-   - Define state: `{ items: [] }`.
-   - Include actions: `addToWatchlist`, `removeFromWatchlist`, `loadWatchlistFromStorage`.
-
+   - Create a `watchlistSlice.js` using Redux Toolkit. Define state: `{ items: [] }`.Include actions: `addToWatchlist`, `removeFromWatchlist`, `loadWatchlistFromStorage`.
 2. **API Integration / Persistence**
-
    - Implement API calls to persist watchlist per logged-in user.
    - Actions: `fetchWatchlist(userId)`, `saveWatchlist(userId, items)`.
-
 3. **Content Card Watchlist Indicator**
-
-   - Update `ContentCard` component to display a "Watchlist" icon if the item is saved.
-   - Handle click to toggle watchlist state.
-
+   - Update `ContentCard` component to display a "Watchlist" icon if the item is saved.Handle click to toggle watchlist state
 4. **Watchlist Screen UI**
-
-   - Create a dedicated `WatchlistScreen.jsx` page.
-   - Display all saved items using `ContentCard` components.
-   - Include "Remove" functionality per item.
-
+   - Create a dedicated `WatchlistScreen.jsx` page.Display all saved items using `ContentCard` components.Include "Remove" functionality per item.
 5. **Local Storage Fallback**
-
-   - Implement saving/retrieving watchlist from `localStorage` for unauthenticated users.
-   - Sync with Redux state on app load.
-
+   - Implement saving/retrieving watchlist from `localStorage` for unauthenticated users.Sync with Redux state on app load.
 6. **Unit & Integration Tests**
-   - Write tests for Redux slice actions and reducer.
-   - Test `WatchlistScreen` and `ContentCard` interactions.
+   - Write tests for Redux slice actions and reducer.Test `WatchlistScreen` and `ContentCard` interactions.
 
 ---
 
@@ -54,7 +37,6 @@ The watchlist should store content items saved by a logged-in user. We have an e
    - `addToWatchlist` should append item if not already present.
    - `removeFromWatchlist` should remove by `itemId`.
    - `loadWatchlistFromStorage` should replace state.items with provided array.
-5. Export actions and reducer.
 
 **Instructions:**
 
@@ -97,9 +79,7 @@ Clicking the icon toggles the watchlist state using Redux actions.
 **Questions Agent should ask:**
 
 - Should we paginate or lazy-load if watchlist is long?
-- Are we reusing `ContentCard` from main feed?
-- How should empty states be handled ?
-- What rollback strategy is required?
+- How should empty states and duplicate be handled ?
 - How to handle duplicate add requests?
 
 **Files to reference:**
